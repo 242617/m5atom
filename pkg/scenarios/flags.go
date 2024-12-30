@@ -280,5 +280,5 @@ var (
 		Black, Black, Red, Red, Blue,
 		Black, Red, Red, Red, Red,
 	)
-	Zulu = MustComposeWithSpaces(ZuluFlag, Y, A, N, K, E, E)
+	Zulu = MustComposeWithSpaces(ZuluFlag, Z, U, L, U)
 )

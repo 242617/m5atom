@@ -185,6 +185,13 @@ var (
 		Black, Black, White, Black, Black,
 		Black, Black, White, Black, Black,
 	)
+	Z = MustNew5x5(
+		White, White, White, White, White,
+		Black, Black, Black, White, Black,
+		Black, Black, White, Black, Black,
+		Black, White, Black, Black, Black,
+		White, White, White, White, White,
+	)
 	Empty = MustNew5x5(
 		Black, Black, Black, Black, Black,
 		Black, Black, Black, Black, Black,
