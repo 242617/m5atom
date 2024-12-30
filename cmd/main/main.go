@@ -2,8 +2,7 @@ package main
 
 import (
 	"machine"
-
-	"log"
+	"os"
 	"time"
 
 	"github.com/pkg/errors"
@@ -18,7 +17,6 @@ const (
 	FPSDelay = time.Second / FPS
 )
 
-func init() { log.SetFlags(log.Ltime) }
 func main() {
 	var ledsPin machine.Pin = 27
 	ledsPin.Configure(machine.PinConfig{Mode: machine.PinOutput})
@@ -33,14 +31,16 @@ func main() {
 		screen.WithBrightness(.2),
 	)
 	if err != nil {
-		log.Fatal(errors.Wrap(err, "create screen"))
+		println(errors.Wrap(err, "create screen"))
+		os.Exit(1)
 	}
 
 	go scenarios.Flags(screen)
 
 	for {
 		if err := leds.WriteColors(screen.Render()); err != nil {
-			log.Fatal(err)
+			println(errors.Wrap(err, "write colors"))
+			os.Exit(1)
 		}
 		time.Sleep(FPSDelay)
 	}

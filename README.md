@@ -10,17 +10,17 @@ Several layers of abstraction for representing [Nautical flags](flags.png) with 
 
 ```
 tinygo flash \
-    -port /dev/cu.usbserial-XXXXXXXXXX \
+    -port /dev/tty.usbserial-XXXXXXXXXX \
     -target=m5stack \
     cmd/main/main.go
 ```
-where `cu.usbserial-XXXXXXXXXX` is your device's name.
+where `tty.usbserial-XXXXXXXXXX` is your device's name.
 
 ## Debug
 
 For debugging on MacOS it's convenient to use `screen`:
 ```
-screen /dev/cu.usbserial-XXXXXXXXXX 115200
+screen /dev/tty.usbserial-XXXXXXXXXX 115200
 ```
 ☝🏼 For reference, to **exit** press `Control + \`, then `y` to confirm.
 
